@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparator\ArrayComparator.cs" />
+    <Compile Include="Comparator\DictionaryComparator.cs" />
+    <Compile Include="Comparator\ListComparator.cs" />
     <Compile Include="Comparer.cs" />
+    <Compile Include="ISimilarComparer.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
