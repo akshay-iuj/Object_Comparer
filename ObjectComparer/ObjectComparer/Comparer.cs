@@ -15,6 +15,10 @@ namespace ObjectComparer
             {
                 return true;
             }
+            if((obj1 == null && obj2!=null) ||( obj1 != null && obj2 == null))
+            {
+                return false;
+            }
             if (!obj1.GetType().Equals(obj2.GetType()))
             {
                 return false;
@@ -30,7 +34,7 @@ namespace ObjectComparer
                 Array second = obj2 as Array;
                 var en = first.GetEnumerator();
                 int i = 0;
-                if (first == null && second == null)
+                if (first == null || second == null)
                 {
                     if (!SimilarComparer(first, second))
                         return false;
@@ -60,7 +64,7 @@ namespace ObjectComparer
                 {
                     var list1 = obj1 as IList;
                     var list2 = obj2 as IList;
-                    if (list1 == null && list2 == null)
+                    if (list1 == null  || list2 == null)
                     {
                         if (!SimilarComparer(list1, list1))
                             return false;
@@ -86,7 +90,7 @@ namespace ObjectComparer
                 else
                 {
                     var dict2 = obj2 as IDictionary;
-                    if (dict1 == null && dict2 == null)
+                    if (dict1 == null || dict2 == null)
                     {
                         if (!SimilarComparer(dict1, dict2))
                             return false;
